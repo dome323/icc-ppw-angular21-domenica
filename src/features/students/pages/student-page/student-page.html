@@ -4,16 +4,9 @@
 
   <ul class="students-list">
 
-    <!--
-      @for itera el signal students().
-      track student.id: usa el ID como clave única para optimizar el DOM.
-    -->
     @for (student of students(); track student.id) {
       <li class="students-list__item">
-        <!--
-          [routerLink]="['/students', student.id]" → property binding con array.
-          Angular concatena los segmentos: produce /students/1, /students/2, etc.
-        -->
+
         <a [routerLink]="['/students', student.id]">
           {{ student.name }}
         </a>

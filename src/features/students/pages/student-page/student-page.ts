@@ -10,7 +10,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class StudentPage {
   readonly students = signal([
-    { id: 1, name: 'Jefferson' },
+    { id: 1, name: 'Domenica' },
     { id: 2, name: 'Maria' },
     { id: 3, name: 'Juan' },
     { id: 4, name: 'Pepe' },
