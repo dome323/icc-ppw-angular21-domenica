@@ -11,6 +11,6 @@ export class AppFooterComponent {
   readonly hoy = new Date();
   readonly costoCurso = 45.99;
   readonly progreso = signal(0.85);
-  readonly estudiante = 'jefferson guerrero';
+  readonly estudiante = 'jDomenica Uyunkar';
   readonly configuracion = { version: '21.0.0', framework: 'Angular' };
 }
