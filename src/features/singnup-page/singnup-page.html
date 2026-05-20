@@ -1,0 +1,36 @@
+<section class="space-y-10">
+  <header class="sapece-y-3">
+    <p class="text-sm font-semibold 
+       uppercase tracking-[0.3em]
+       text-sky-700">Singnup</p>
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+      Distribuciones de layout con Tailwind
+    </h1>
+  </header>
+
+  <form class= "max-w-md space-y-4">
+    <div class=" space-y-2">
+      <label for="email"
+      class="block test-sm font-semibold">Email
+
+      </label>
+      <input id="email"
+      type="email"
+      class="w-full rounded-lg border border-slate-300 px-3 py-2 
+      text-slate-900 placeholder-slate-400 focus-border-sky-500"
+      placeholder="tu@gmail.com"
+      [formControl]="emailControl"
+      >
+      @if(email.touched && email.hasError('required')){
+        <p class="text-sm text-red-600">El email es requerido</p>
+      }
+
+      @if(email.touched && email.hasError('email')){
+        <p class="text-sm text-red-600">El email no es válido</p>
+      }
+    </div>
+
+  </form>
+
+
+</section>
