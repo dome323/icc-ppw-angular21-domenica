@@ -33,18 +33,11 @@ Explorando la documentación oficial de Tailwind CSS, se añadieron distribucion
 * **Descripción:** Diseñado con un sistema `grid-cols-3` donde el primer elemento ocupa dos columnas (`md:col-span-2`) en pantallas de escritorio. Es ideal para maquetar secciones de noticias principales o tableros de anuncios destacados.
 * **Comentario en código:** Incluido en la cabecera del `<article>` correspondiente.
 * **Captura de pantalla:**
-  ![Grid Asimétrico](ruta-a-tu-captura-1.png)
+  ![Grid Asimétrico](assets\02-layout-01.png)
 
 ### Distribución Adicional 2: Flexbox Vertical Invertido (Flujo de Chat)
 * **Descripción:** Implementación controlada a través de la directiva `flex-col-reverse`. Invierte el orden lógico del DOM haciendo que los elementos se posicionen de abajo hacia arriba. Es el diseño estándar para cajas de chats en tiempo real o registros históricos de auditoría.
 * **Comentario en código:** Incluido en la cabecera del `<article>` correspondiente.
 * **Captura de pantalla:**
-  ![Flexbox Invertido](ruta-a-tu-captura-2.png)
+  ![Flexbox Invertido](assets\03-layout-02.png)
 
----
-
-## ⚙️ Instrucciones de Ejecución
-
-1. Instalar las dependencias del proyecto usando el gestor de paquetes correspondiente:
-   ```bash
-   pnpm install
