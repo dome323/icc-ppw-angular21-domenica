@@ -1,26 +1,26 @@
 <header class="app-header">
 
-  <span class="title">  {{brand()| uppercase}}</span>
+  <span class="title">  {{brand() | uppercase}}</span>
 
-  <!----NAVBAR-------->
-<nav class="app-header_nav">
-  <!--
-    [routerLinkActiveOptions]="{ exact: true }" → solo activo cuando la URL es exactamente "/".
-    Sin esto, "/" estaría activo también en /students, /profile, etc.
-  -->
-  <a class="nav-link"
-     routerLink="/"
-     routerLinkActive="nav-link--active"
-     [routerLinkActiveOptions]="{ exact: true }">
-    Inicio
-  </a>
+  <nav class="app-header_nav">
+    <a class="nav-link"
+       routerLink="/"
+       routerLinkActive="nav-link--active"
+       [routerLinkActiveOptions]="{ exact: true }">
+      Inicio
+    </a>
 
-  <!-- Estudiantes no necesita exact: "/students" no es prefijo de ninguna otra ruta. -->
-  <a class="nav-link"
-     routerLink="/students"
-     routerLinkActive="nav-link--active">
-    Estudiantes
-  </a>
-</nav>
+    <a class="nav-link"
+       routerLink="/student"
+       routerLinkActive="nav-link--active">
+      Estudiantes
+    </a>
 
-  </header>
+    <a class="nav-link"
+       routerLink="/layouts"
+       routerLinkActive="nav-link--active">
+      Layouts
+    </a>
+  </nav>
+
+</header>
