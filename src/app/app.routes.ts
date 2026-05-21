@@ -5,6 +5,7 @@ import { StudentPage } from './features/students/pages/student-page/student-page
 import { LayoutsPage } from './features/layouts/pages/layouts-page';
 import { SignupPage } from './features/signup/page/signup-page/signup-page';
 import ProfilePage from './features/profile/pages/profile-page/profile-page';
+import ProjectConfigPage from './features/project/pages/project-config-page';
 
 
 
@@ -16,4 +17,5 @@ export const routes: Routes = [
   { path: 'layouts', component: LayoutsPage },
   { path: 'signup', component: SignupPage },
   { path: 'profile', component: ProfilePage },
+  { path: 'project-config', component: ProjectConfigPage }
 ];
