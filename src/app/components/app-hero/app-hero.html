@@ -20,7 +20,7 @@
   <!-- BRILLO -->
 
   <div
-    class="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-cyan-100/10"
+    class="absolute inset-0 bg-linear-to-br from-white/20 via-transparent to-cyan-100/10"
   ></div>
 
   <!-- CONTENIDO -->
@@ -36,7 +36,7 @@
       <!-- AURA -->
 
       <div
-        class="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-300 via-pink-300 to-violet-300 blur-2xl opacity-50"
+        class="absolute inset-0 rounded-full bg-linear-to-r from-cyan-300 via-pink-300 to-violet-300 blur-2xl opacity-50"
       ></div>
 
       <!-- IMAGEN -->
@@ -46,7 +46,6 @@
       >
 
         <img
-          src="assets/dome.png"
           alt="Domenica Uyunkar"
           class="h-full w-full object-cover"
         />
@@ -66,7 +65,7 @@
     <!-- TITULO -->
 
     <h1
-      class="mt-7 bg-gradient-to-r from-cyan-500 via-sky-500 to-fuchsia-500 bg-clip-text text-5xl font-black tracking-tight text-transparent md:text-7xl"
+      class="mt-7 bg-linear-to-r from-cyan-500 via-sky-500 to-fuchsia-500 bg-clip-text text-5xl font-black tracking-tight text-transparent md:text-7xl"
     >
       Domenica Uyunkar
     </h1>
@@ -87,7 +86,7 @@
     <button
       type="button"
       (click)="toggleMode()"
-      class="mt-10 rounded-2xl bg-gradient-to-r from-cyan-300 via-sky-300 to-fuchsia-300 px-8 py-4 font-semibold text-slate-700 shadow-[0_12px_30px_rgba(120,190,255,0.25)] transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+      class="mt-10 rounded-2xl bg-linear-to-r from-cyan-300 via-sky-300 to-fuchsia-300 px-8 py-4 font-semibold text-slate-700 shadow-[0_12px_30px_rgba(120,190,255,0.25)] transition-all duration-300 hover:-translate-y-1 hover:scale-105"
     >
       Vista: {{ viewMode() }}
     </button>
@@ -95,7 +94,7 @@
     <!-- CAJA DINAMICA -->
 
     <div
-      class="mt-12 w-full rounded-[2rem] border border-white/40 bg-white/40 p-8 backdrop-blur-xl"
+      class="mt-12 w-full rounded-4xl border border-white/40 bg-white/40 p-8 backdrop-blur-xl"
     >
 
       @switch (viewMode()) {
@@ -109,7 +108,7 @@
             @for (item of topics(); track item) {
 
               <div
-                class="rounded-3xl bg-gradient-to-r from-cyan-100 via-sky-100 to-pink-100 p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02]"
+                class="rounded-3xl bg-linear-to-r from-cyan-100 via-sky-100 to-pink-100 p-6 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02]"
               >
 
                 <p
@@ -135,7 +134,7 @@
         @case ('resumen') {
 
           <div
-            class="rounded-[2rem] bg-gradient-to-r from-cyan-200 via-sky-200 to-fuchsia-200 p-12 text-center shadow-inner"
+            class="rounded-4xl bg-linear-to-r from-cyan-200 via-sky-200 to-fuchsia-200 p-12 text-center shadow-inner"
           >
 
             <p
