@@ -1,0 +1,200 @@
+<section class="space-y-10">
+
+  <!-- HERO -->
+
+  <section
+    class="rounded-4xl bg-linear-to-r from-pink-300 via-fuchsia-200 to-purple-300 p-10 shadow-xl"
+  >
+
+    <p class="text-sm font-bold uppercase tracking-[0.35em] text-white/90">
+      Angular 21 + TailwindCSS
+    </p>
+
+    <h1 class="mt-4 text-5xl font-black tracking-tight text-white">
+      UI Components Catalog
+    </h1>
+
+    <p class="mt-5 max-w-2xl text-sm text-white/90">
+      Catálogo visual de componentes reutilizables desarrollados con Angular,
+      TailwindCSS y DaisyUI.
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-3">
+
+      <span class="badge border-none bg-white text-pink-500">
+        Responsive
+      </span>
+
+      <span class="badge border-none bg-pink-100 text-fuchsia-600">
+        DaisyUI
+      </span>
+
+      <span class="badge border-none bg-purple-100 text-purple-700">
+        Angular 21
+      </span>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <app-gradient-cta-banner
+    title="Diseño visual moderno"
+    description="Componentes reutilizables con estilos pastel y layouts responsive."
+    actionLabel="Explorar"
+  />
+
+  <!-- CARDS -->
+
+  <section class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+    <app-glass-stat-card
+      label="Pantallas"
+      value="12"
+      helper="Diseños responsive"
+    />
+
+    <app-glass-stat-card
+      label="Componentes"
+      value="9"
+      helper="UI reutilizable"
+    />
+
+    <app-glass-stat-card
+      label="Layouts"
+      value="6"
+      helper="Distribuciones modernas"
+    />
+
+    <app-glass-stat-card
+      label="UI Score"
+      value="A+"
+      helper="Experiencia visual"
+    />
+
+  </section>
+
+  <!-- GRID PRINCIPAL -->
+
+  <section class="grid gap-6 lg:grid-cols-[2fr_1fr]">
+
+    <!-- PANEL GRANDE -->
+
+    <article
+      class="rounded-4xl border border-pink-100 bg-white/70 p-8 shadow-xl backdrop-blur-md"
+    >
+
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-fuchsia-500">
+        Dashboard Layout
+      </p>
+
+      <h2 class="mt-3 text-3xl font-black tracking-tight text-slate-800">
+        Distribución Responsive
+      </h2>
+
+      <p class="mt-4 max-w-2xl text-sm text-slate-600">
+        Diseño adaptable con componentes reutilizables usando TailwindCSS y DaisyUI.
+      </p>
+
+      <!-- MINI CARDS -->
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2">
+
+        <div
+          class="rounded-3xl bg-linear-to-r from-pink-100 to-rose-100 p-5 shadow-sm"
+        >
+
+          <p class="font-bold text-pink-700">
+            Glass UI
+          </p>
+
+          <p class="mt-2 text-sm text-slate-600">
+            Interfaces suaves con blur y transparencias.
+          </p>
+
+        </div>
+
+        <div
+          class="rounded-3xl bg-linear-to-r from-purple-100 to-fuchsia-100 p-5 shadow-sm"
+        >
+
+          <p class="font-bold text-purple-700">
+            Responsive
+          </p>
+
+          <p class="mt-2 text-sm text-slate-600">
+            Adaptación automática a móvil y desktop.
+          </p>
+
+        </div>
+
+        <div
+          class="rounded-3xl bg-linear-to-r from-cyan-100 to-sky-100 p-5 shadow-sm"
+        >
+
+          <p class="font-bold text-sky-700">
+            TailwindCSS
+          </p>
+
+          <p class="mt-2 text-sm text-slate-600">
+            Utility-first CSS moderno.
+          </p>
+
+        </div>
+
+        <div
+          class="rounded-3xl bg-linear-to-r from-fuchsia-100 to-pink-100 p-5 shadow-sm"
+        >
+
+          <p class="font-bold text-fuchsia-700">
+            DaisyUI
+          </p>
+
+          <p class="mt-2 text-sm text-slate-600">
+            Componentes visuales elegantes.
+          </p>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- CHIPS -->
+
+    <app-feature-chip-list
+      [chips]="quickChips"
+      title="UI Features"
+    />
+
+  </section>
+
+  <!-- SECCION EXTRA -->
+
+  <section
+    class="rounded-4xl bg-linear-to-r from-fuchsia-200 via-pink-200 to-purple-200 p-10 shadow-xl"
+  >
+
+    <p class="text-sm font-bold uppercase tracking-[0.3em] text-white/90">
+      UI Design
+    </p>
+
+    <h2 class="mt-3 text-4xl font-black text-white">
+      Interfaz Moderna y Pastel
+    </h2>
+
+    <p class="mt-4 max-w-2xl text-sm text-white/90">
+      Esta práctica implementa componentes standalone reutilizables con una
+      experiencia visual moderna inspirada en dashboards SaaS.
+    </p>
+
+    <button
+      class="btn mt-6 border-none bg-white text-fuchsia-600 hover:bg-pink-100"
+    >
+      Ver Componentes
+    </button>
+
+  </section>
+
+</section>

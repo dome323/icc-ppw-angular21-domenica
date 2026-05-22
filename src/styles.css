@@ -1,13 +1,66 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
-@theme {
-  --color-brand: #0f4c81;
-  --color-brand-strong: #0b3a66;
-  --color-surface: #ffffff;
+body {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fdf2f8,
+      #faf5ff,
+      #eff6ff
+    );
+
+  color: #334155;
 }
 
-@layer base {
-  body {
-    @apply bg-slate-100;
-  }
+/* GLASS EFFECT */
+
+.glass-surface {
+
+  background:
+    rgba(255,255,255,0.55);
+
+  backdrop-filter: blur(18px);
+
+  border:
+    1px solid rgba(255,255,255,0.35);
+
+  box-shadow:
+    0 10px 30px rgba(236,72,153,0.12);
+
+  transition:
+    transform .25s ease;
+}
+
+.glass-surface:hover {
+  transform: translateY(-5px);
+}
+
+/* GRADIENT CTA */
+
+.gradient-surface {
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9a8d4,
+      #c084fc,
+      #93c5fd
+    );
+
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fdf2f8,
+      #faf5ff,
+      #eff6ff
+    );
 }
