@@ -19,6 +19,58 @@
 <!-- Estado de datos -->
 @if (simpsonsResource.hasValue()) {
 
+    <!-- Controles de paginación -->
+<div class="flex items-center justify-between gap-4 mb-6">
+
+    <!-- Texto -->
+    <span class="text-sm text-base-content/60">
+
+        Página {{ paginationService.currentPage() }}
+        de {{ simpsonsResource.value()!.pages }}
+
+    </span>
+
+    <!-- Botones -->
+    <div class="join">
+
+        <!-- Página anterior -->
+        <a
+            class="join-item btn btn-sm"
+            [class.btn-disabled]="paginationService.currentPage() <= 1"
+            [routerLink]="[]"
+            [queryParams]="{
+                page: paginationService.currentPage() - 1
+            }"
+        >
+            «
+        </a>
+
+        <!-- Página actual -->
+        <button class="join-item btn btn-sm btn-active">
+
+            {{ paginationService.currentPage() }}
+
+        </button>
+
+        <!-- Página siguiente -->
+        <a
+            class="join-item btn btn-sm"
+            [class.btn-disabled]="
+                paginationService.currentPage() >=
+                simpsonsResource.value()!.pages
+            "
+            [routerLink]="[]"
+            [queryParams]="{
+                page: paginationService.currentPage() + 1
+            }"
+        >
+            »
+        </a>
+
+    </div>
+
+</div>
+
 <div class="overflow-x-auto rounded-box border border-base-300 bg-base-100 shadow-sm">
 
     <table class="table w-full">
