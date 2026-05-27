@@ -6,14 +6,13 @@ import {
   SimpsonsCharacter,
   SimpsonsResponse,
 } from '../models/simpsons.interface';
+import { environment } from '../../../../enviroments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class SimpsonsService {
   
   private http = inject(HttpClient);
-  private readonly baseUrl = 'https://thesimpsonsapi.com/api';
-  // private readonly baseUrl = environment.apiUrl;
-
+  private readonly baseUrl = environment.apiUrl;
 
   getCharactersOptions(options: Options = {}): Observable<SimpsonsResponse> {
     const { page = 1, limit = 10 } = options;
