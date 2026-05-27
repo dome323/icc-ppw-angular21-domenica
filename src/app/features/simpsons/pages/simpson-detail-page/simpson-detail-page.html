@@ -1,30 +1,36 @@
-<section class="mx-auto max-w-4xl space-y-6">
+<section class="mx-auto max-w-5xl px-6 py-10 space-y-8">
 
-  <!-- Botón volver -->
+  <!-- BOTON VOLVER -->
   <a
     routerLink="/simpsons"
-    class="btn btn-ghost btn-sm"
+    class="btn btn-outline btn-primary btn-sm rounded-xl shadow-sm hover:scale-105 transition-all"
   >
     ← Volver al listado
   </a>
 
-  <!-- Loading -->
+  <!-- LOADING -->
   @if (characterResource.isLoading()) {
 
-    <div class="flex h-56 items-center justify-center">
+    <div class="flex h-72 items-center justify-center">
 
-      <span
-        class="loading loading-spinner loading-lg text-primary"
-      ></span>
+      <div class="text-center space-y-4">
+
+        <span class="loading loading-spinner loading-lg text-primary"></span>
+
+        <p class="text-base-content/60 font-medium">
+          Cargando personaje...
+        </p>
+
+      </div>
 
     </div>
 
   }
 
-  <!-- Error -->
+  <!-- ERROR -->
   @if (characterResource.error()) {
 
-    <div class="alert alert-error">
+    <div class="alert alert-error shadow-lg">
 
       <span>
         No se pudo cargar el personaje.
@@ -34,92 +40,110 @@
 
   }
 
-  <!-- Datos -->
+  <!-- DETAIL -->
   @if (characterResource.hasValue()) {
 
     <article
-      class="card border border-base-300 bg-base-100 shadow-sm"
+      class="card border border-base-300 bg-base-100 shadow-2xl rounded-3xl overflow-hidden"
     >
 
-      <div class="card-body gap-6 md:flex-row">
+      <div class="card-body gap-10 md:flex-row items-center p-8">
 
-        <!-- Imagen -->
-        <div class="mx-auto md:mx-0">
+        <!-- IMAGEN -->
+        <div class="mx-auto md:mx-0 flex justify-center">
 
           <img
             [src]="'https://cdn.thesimpsonsapi.com/500' + characterResource.value()!.portrait_path"
             [alt]="characterResource.value()!.name"
-            class="h-56 w-56 rounded-2xl object-cover ring ring-base-300 ring-offset-2 ring-offset-base-100"
+            class="h-64 w-64 rounded-3xl object-cover ring-4 ring-primary ring-offset-4 ring-offset-base-100 shadow-xl hover:scale-105 transition-transform duration-300"
           />
 
         </div>
 
-        <!-- Información -->
-        <div class="space-y-3">
+        <!-- INFO -->
+        <div class="space-y-5 flex-1">
 
-          <h2 class="text-3xl font-black tracking-tight">
+          <!-- NOMBRE -->
+          <div>
 
-            {{ characterResource.value()!.name }}
+            <h2 class="text-4xl font-black tracking-tight leading-tight">
+              {{ characterResource.value()!.name }}
+            </h2>
 
-          </h2>
+            <p class="text-base-content/50 text-lg mt-1 italic">
+              Personaje de The Simpsons
+            </p>
 
-          <p class="text-base-content/80">
+          </div>
 
-            <strong>Ocupación:</strong>
+          <!-- DATOS -->
+          <div class="space-y-3 text-base">
 
-            {{
-              characterResource.value()!.occupation
-              || 'Sin ocupación registrada'
-            }}
+            <div class="flex items-center gap-2">
 
-          </p>
+              <span class="font-bold text-primary">
+                Ocupación:
+              </span>
 
-          <p class="text-base-content/80">
+              <span class="text-base-content/80">
+                {{
+                  characterResource.value()!.occupation ||
+                  'Sin ocupación registrada'
+                }}
+              </span>
 
-            <strong>Género:</strong>
+            </div>
 
-            {{
-              characterResource.value()!.gender
-              || 'No registrado'
-            }}
+            <div class="flex items-center gap-2">
 
-          </p>
+              <span class="font-bold text-primary">
+                Género:
+              </span>
 
-          <p class="text-base-content/80">
+              <span class="text-base-content/80">
+                {{
+                  characterResource.value()!.gender ||
+                  'No registrado'
+                }}
+              </span>
 
-            <strong>Edad:</strong>
+            </div>
 
-            {{
-              characterResource.value()!.age
-              ?? 'No registrada'
-            }}
+            <div class="flex items-center gap-2">
 
-          </p>
+              <span class="font-bold text-primary">
+                Edad:
+              </span>
 
-          <span
-            class="badge badge-lg"
+              <span class="text-base-content/80">
+                {{
+                  characterResource.value()!.age ??
+                  'No registrada'
+                }}
+              </span>
 
-            [class.badge-success]="
-              characterResource.value()!.status === 'Alive'
-            "
+            </div>
 
-            [class.badge-error]="
-              characterResource.value()!.status === 'Deceased'
-            "
+          </div>
 
-            [class.badge-warning]="
-              characterResource.value()!.status !== 'Alive'
-              &&
-              characterResource.value()!.status !== 'Deceased'
-            "
-          >
+          <!-- ESTADO -->
+          <div class="pt-2">
 
-            {{
-              characterResource.value()!.status
-              || 'Desconocido'
-            }}
+            <span
+              class="badge badge-lg px-5 py-4 text-sm font-semibold shadow-md"
+              [class.badge-success]="characterResource.value()!.status === 'Alive'"
+              [class.badge-error]="characterResource.value()!.status === 'Deceased'"
+              [class.badge-warning]="
+                characterResource.value()!.status !== 'Alive' &&
+                characterResource.value()!.status !== 'Deceased'
+              "
+            >
 
-          </span>
+              {{ characterResource.value()!.status || 'Desconocido' }}
+
+            </span>
+
+          </div>
 
         </div>
 

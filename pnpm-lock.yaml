@@ -17,6 +17,9 @@ importers:
       '@angular/core':
         specifier: ^21.2.0
         version: 21.2.12(@angular/compiler@21.2.12)(rxjs@7.8.2)
+      '@angular/fire':
+        specifier: ^0.0.0
+        version: 0.0.0
       '@angular/forms':
         specifier: ^21.2.0
         version: 21.2.12(@angular/common@21.2.12(@angular/core@21.2.12(@angular/compiler@21.2.12)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.12(@angular/compiler@21.2.12)(rxjs@7.8.2))(@angular/platform-browser@21.2.12(@angular/common@21.2.12(@angular/core@21.2.12(@angular/compiler@21.2.12)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.12(@angular/compiler@21.2.12)(rxjs@7.8.2)))(rxjs@7.8.2)
@@ -45,6 +48,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.3.0
         version: 4.3.0
+      daisyui:
+        specifier: ^5.5.20
+        version: 5.5.20
       jsdom:
         specifier: ^28.0.0
         version: 28.1.0
@@ -236,6 +242,10 @@ packages:
         optional: true
       zone.js:
         optional: true
+
+  '@angular/fire@0.0.0':
+    resolution: {integrity: sha512-z6dYD4QwNySyVA1qylMSukhl4iWDwRhQ4GtjAJTVz0/MuJGN+CCSpjF7KpJxCHjfu3CtjtcA+Z79AhiUYThpEQ==}
+    deprecated: This was a placeholder, do not use
 
   '@angular/forms@21.2.12':
     resolution: {integrity: sha512-jhHaIgMWcgPcVFEPwhjLhByvA2xou6Th5PR6iC3H0YeLQyRmOFPWdczszytlWB1CeJ0UT9epxzOZT25zNcGSfg==}
@@ -1680,6 +1690,9 @@ packages:
   cssstyle@6.2.0:
     resolution: {integrity: sha512-Fm5NvhYathRnXNVndkUsCCuR63DCLVVwGOOwQw782coXFi5HhkXdu289l59HlXZBawsyNccXfWRYvLzcDCdDig==}
     engines: {node: '>=20'}
+
+  daisyui@5.5.20:
+    resolution: {integrity: sha512-HemJcjl0Gk9rQ8BcgofN6p+EURrqftQG9wK1Hkxs98i49xe68+QxpNvry+PyxwkIUgrbMpNmZ5ZWjmtffAjfhQ==}
 
   data-urls@7.0.0:
     resolution: {integrity: sha512-23XHcCF+coGYevirZceTVD7NdJOqVn+49IHyxgszm+JIiHLoB2TkmPtsYkNWT1pvRSGkc35L6NHs0yHkN2SumA==}
@@ -3135,6 +3148,8 @@ snapshots:
     optionalDependencies:
       '@angular/compiler': 21.2.12
 
+  '@angular/fire@0.0.0': {}
+
   '@angular/forms@21.2.12(@angular/common@21.2.12(@angular/core@21.2.12(@angular/compiler@21.2.12)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.12(@angular/compiler@21.2.12)(rxjs@7.8.2))(@angular/platform-browser@21.2.12(@angular/common@21.2.12(@angular/core@21.2.12(@angular/compiler@21.2.12)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.12(@angular/compiler@21.2.12)(rxjs@7.8.2)))(rxjs@7.8.2)':
     dependencies:
       '@angular/common': 21.2.12(@angular/core@21.2.12(@angular/compiler@21.2.12)(rxjs@7.8.2))(rxjs@7.8.2)
@@ -4338,6 +4353,8 @@ snapshots:
       '@csstools/css-syntax-patches-for-csstree': 1.1.3(css-tree@3.2.1)
       css-tree: 3.2.1
       lru-cache: 11.3.6
+
+  daisyui@5.5.20: {}
 
   data-urls@7.0.0:
     dependencies:

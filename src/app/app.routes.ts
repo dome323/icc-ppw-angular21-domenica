@@ -1,24 +1,30 @@
 import { Routes } from '@angular/router';
+
 import { HomePage } from './features/home/pages/home-page/home-page';
 import { StudentDetailPage } from './features/students/pages/student-detail-page/student-detail-page';
 import { StudentPage } from './features/students/pages/student-page/student-page';
 import { LayoutsPage } from './features/layouts/pages/layouts-page';
 import { SignupPage } from './features/signup/page/signup-page/signup-page';
 import ProfilePage from './features/profile/pages/profile-page/profile-page';
-import ProjectConfigPage from './features/project/pages/project-config-page';
 import { UiComponentsPage } from './features/ui-components/pages/ui-components-page';
-import { SimpsonsPageComponent } from './features/simpsons/pages/simpsons-page/simpsons-page';
-import { SimpsonDetailPageComponent } from './features/simpsons/pages/simpson-detail-page/simpson-detail-page';
 
+import { SimpsonsPageComponent } from './features/simpsons/pages/simpsons-page/simpsons-page';
+import ProjectConfigPage from './features/project/pages/project-config-page';
+import { SimpsonDetailPageComponent } from './features/simpsons/pages/simpson-detail-page/simpson-detail-page';
 
 export const routes: Routes = [
   { path: '', component: HomePage },
+
   { path: 'students', component: StudentPage },
   { path: 'students/:id', component: StudentDetailPage },
+
   { path: 'layouts', component: LayoutsPage },
   { path: 'signup', component: SignupPage },
   { path: 'profile', component: ProfilePage },
   { path: 'project-config', component: ProjectConfigPage },
   { path: 'ui-components', component: UiComponentsPage },
+
+  /* SIMPSONS */
   { path: 'simpsons', component: SimpsonsPageComponent },
-{ path: 'simpsons/:id', component: SimpsonDetailPageComponent },];
+  { path: 'simpsons/:id', component: SimpsonDetailPageComponent },
+];

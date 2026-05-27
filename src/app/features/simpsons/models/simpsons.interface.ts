@@ -5,7 +5,11 @@ export interface SimpsonsCharacter {
   gender: string;
   name: string;
   occupation: string;
+
+  image: string;
+
   portrait_path: string;
+
   phrases: string[];
   status: string;
 }
