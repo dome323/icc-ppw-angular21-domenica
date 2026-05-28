@@ -1,136 +1,58 @@
-<header class="max-lg:collapse bg-base-100 shadow-sm w-full rounded-md">
+<header class="w-full bg-pink-100/70 shadow-md rounded-2xl relative z-50 border border-pink-200">
 
-  <input
-    id="navbar-toggle"
-    class="peer hidden"
-    type="checkbox"
-  />
+  <!-- TOGGLE -->
+  <input id="navbar-toggle" class="peer hidden" type="checkbox" />
 
+  <!-- OVERLAY MOBILE -->
   <label
     for="navbar-toggle"
-    class="fixed inset-0 hidden max-lg:peer-checked:block"
+    class="fixed inset-0 hidden peer-checked:block bg-black/20 z-40 lg:hidden"
   ></label>
 
-  <div class="collapse-title navbar px-4">
+  <!-- TOP BAR -->
+  <div class="navbar px-5 py-3 relative z-50">
 
+    <!-- START -->
     <div class="navbar-start">
 
       <label
         for="navbar-toggle"
-        class="btn btn-ghost lg:hidden"
+        class="btn btn-ghost lg:hidden text-pink-500 text-2xl"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16"
-          />
-        </svg>
+        ☰
       </label>
 
       <a
-        class="btn btn-ghost text-xl"
+        class="btn btn-ghost text-xl font-extrabold text-pink-500 hover:bg-pink-200/40 rounded-2xl"
         routerLink="/"
       >
-        {{ brand() | uppercase }}
+        ✿ {{ brand() | uppercase }} ✿
       </a>
+
     </div>
 
-    <!-- DESKTOP -->
+    <!-- DESKTOP MENU -->
     <div class="navbar-center hidden lg:flex">
 
-      <ul class="menu menu-horizontal px-1">
+      <ul class="menu menu-horizontal gap-2 text-pink-500 font-medium">
 
-        <li>
-          <a
-            routerLink="/"
-            routerLinkActive="menu-active"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            Inicio
-          </a>
-        </li>
+        <li><a class="rounded-xl hover:bg-pink-200/40" routerLink="/">Inicio</a></li>
+        <li><a class="rounded-xl hover:bg-rose-200/40" routerLink="/student">Estudiantes</a></li>
+        <li><a class="rounded-xl hover:bg-purple-200/40" routerLink="/layouts">Layouts</a></li>
+        <li><a class="rounded-xl hover:bg-indigo-200/40" routerLink="/ui-components">UI</a></li>
+        <li><a class="rounded-xl hover:bg-pink-200/40" routerLink="/simpsons">Simpsons</a></li>
 
-        <li>
-          <a
-            routerLink="/student"
-            routerLinkActive="menu-active"
-          >
-            Estudiantes
-          </a>
-        </li>
-
-        <li>
-          <a
-            routerLink="/layouts"
-            routerLinkActive="menu-active"
-          >
-            Layouts
-          </a>
-        </li>
-
-        <li>
-          <a
-            routerLink="/ui-components"
-            routerLinkActive="menu-active"
-          >
-            UI Components
-          </a>
-        </li>
-
-        <li>
-          <a
-            routerLink="/simpsons"
-            routerLinkActive="menu-active"
-          >
-            Simpsons
-          </a>
-        </li>
-
-        <!-- SUBMENU -->
         <li>
           <details>
+            <summary class="rounded-xl hover:bg-pink-200/40">Formularios</summary>
 
-            <summary>Formularios</summary>
+            <ul class="p-3 bg-pink-50 rounded-xl shadow border border-pink-200">
 
-            <ul class="p-2 bg-base-100 rounded-box shadow">
-
-              <li>
-                <a
-                  routerLink="/signup"
-                  routerLinkActive="menu-active"
-                >
-                  Signup
-                </a>
-              </li>
-
-              <li>
-                <a
-                  routerLink="/profile"
-                  routerLinkActive="menu-active"
-                >
-                  Perfil
-                </a>
-              </li>
-
-              <li>
-                <a
-                  routerLink="/project-config"
-                  routerLinkActive="menu-active"
-                >
-                  Configuración Proyecto
-                </a>
-              </li>
+              <li><a class="rounded-xl hover:bg-pink-200/40" routerLink="/signup">Signup</a></li>
+              <li><a class="rounded-xl hover:bg-rose-200/40" routerLink="/profile">Perfil</a></li>
+              <li><a class="rounded-xl hover:bg-purple-200/40" routerLink="/project-config">Config</a></li>
 
             </ul>
-
           </details>
         </li>
 
@@ -138,100 +60,65 @@
 
     </div>
 
-    <div class="navbar-end"></div>
+    <!-- AUTH -->
+    <div class="navbar-end gap-2">
+
+      @if (currentUser()) {
+
+        <span class="hidden lg:block text-sm text-pink-500">
+          💕 {{ currentUser()!.email }}
+        </span>
+
+        <button
+          class="btn btn-sm bg-pink-300 text-white hover:bg-pink-400 rounded-xl"
+          (click)="logout()"
+        >
+          Cerrar sesión
+        </button>
+
+      } @else {
+
+        <a
+          class="btn btn-sm bg-rose-300 text-white hover:bg-rose-400 rounded-xl"
+          routerLink="/auth"
+        >
+          Iniciar sesión
+        </a>
+
+      }
+
+    </div>
 
   </div>
 
-  <!-- MOVIL -->
-  <div class="collapse-content lg:hidden z-10">
+  <!-- MOBILE MENU (ARREGLADO) -->
+  <div
+    class="lg:hidden absolute left-0 top-full w-full z-50
+           max-h-0 overflow-hidden transition-all duration-300
+           peer-checked:max-h-[500px]"
+  >
 
-    <ul class="menu rounded-box bg-base-200">
+    <ul class="menu bg-pink-50 p-4 space-y-2 text-pink-500 shadow-lg">
 
-      <li>
-        <a
-          routerLink="/"
-          routerLinkActive="menu-active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          Inicio
-        </a>
-      </li>
-
-      <li>
-        <a
-          routerLink="/student"
-          routerLinkActive="menu-active"
-        >
-          Estudiantes
-        </a>
-      </li>
+      <li><a routerLink="/">Inicio</a></li>
+      <li><a routerLink="/student">Estudiantes</a></li>
+      <li><a routerLink="/layouts">Layouts</a></li>
+      <li><a routerLink="/ui-components">UI</a></li>
+      <li><a routerLink="/simpsons">Simpsons</a></li>
 
       <li>
-        <a
-          routerLink="/layouts"
-          routerLinkActive="menu-active"
-        >
-          Layouts
-        </a>
-      </li>
-
-      <li>
-        <a
-          routerLink="/ui-components"
-          routerLinkActive="menu-active"
-        >
-          UI Components
-        </a>
-      </li>
-
-      <li>
-        <a
-          routerLink="/ui-components"
-          routerLinkActive="menu-active"
-        >
-          UI Components
-        </a>
-      </li>
-
-      <li>
-
         <details>
-
           <summary>Formularios</summary>
 
-          <ul>
+          <ul class="mt-2 space-y-1">
 
-            <li>
-              <a
-                routerLink="/signup"
-                routerLinkActive="menu-active"
-              >
-                Signup
-              </a>
-            </li>
-
-            <li>
-              <a
-                routerLink="/profile"
-                routerLinkActive="menu-active"
-              >
-                Perfil
-              </a>
-            </li>
-
-            <li>
-              <a
-                routerLink="/project-config"
-                routerLinkActive="menu-active"
-              >
-                Configuración Proyecto
-              </a>
-            </li>
+            <li><a routerLink="/signup">Signup</a></li>
+            <li><a routerLink="/profile">Perfil</a></li>
+            <li><a routerLink="/project-config">Config</a></li>
 
           </ul>
 
         </details>
-
       </li>
 
     </ul>

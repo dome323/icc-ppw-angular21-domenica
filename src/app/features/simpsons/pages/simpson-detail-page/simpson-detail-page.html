@@ -76,6 +76,29 @@
 
           </div>
 
+          <!-- ⭐ BOTÓN DE FAVORITOS -->
+          @if (authService.currentUser()) {
+
+            <button
+              class="btn btn-outline btn-sm"
+              [class.btn-warning]="isFavorite()"
+              (click)="toggleFavorite()"
+            >
+              @if (isFavorite()) {
+                ★ Guardado en favoritos
+              } @else {
+                ☆ Agregar a favoritos
+              }
+            </button>
+
+          } @else {
+
+            <a class="btn btn-ghost btn-sm" routerLink="/auth">
+              Inicia sesion para guardar favoritos
+            </a>
+
+          }
+
           <!-- DATOS -->
           <div class="space-y-3 text-base">
 

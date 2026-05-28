@@ -13,6 +13,7 @@ import { PaginationService } from '../../../../shared/services/pagination.servic
 })
 
 export class SimpsonsPageComponent {
+[x: string]: any;
   private simpsonsService = inject(SimpsonsService);
   paginationService = inject(PaginationService);
   readonly charactersPerPage = signal(10);
