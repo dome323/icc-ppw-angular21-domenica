@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { Auth, authState, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from '@angular/fire/auth';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { from } from 'rxjs';
+import { signInWithPopup,GoogleAuthProvider,} from '@angular/fire/auth';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -25,6 +26,10 @@ export class AuthService {
     return from(signOut(this.auth));
   }
 
+  loginWithGoogle() {
+  const provider = new GoogleAuthProvider();
+  return from(signInWithPopup(this.auth, provider));
+}
   // Acceso rápido al uid del usuario actual (null si no está autenticado).
   get uid(): string | null {
     return this.currentUser()?.uid ?? null;

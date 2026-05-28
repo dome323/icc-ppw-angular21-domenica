@@ -12,6 +12,29 @@ import { AuthService } from '../../../../core/services/auth.service';
 })
 export class AuthPageComponent {
 
+  loginWithGoogle() {
+
+  this.isLoading.set(true);
+
+  this.authService.loginWithGoogle().subscribe({
+
+    next: () => {
+      this.router.navigate(['/']);
+    },
+
+    error: () => {
+
+      this.errorMessage.set(
+        'No se pudo iniciar sesión con Google.'
+      );
+
+      this.isLoading.set(false);
+    }
+
+  });
+
+}
+
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);
